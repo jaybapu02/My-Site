@@ -2,4 +2,3 @@ Django==5.2.2
 gunicorn
 python-decouple
 dj-database-url
-psycopg2-binary 
