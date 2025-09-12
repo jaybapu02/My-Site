@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Jaychandra Das</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+  {% include "nav_bar.html" %}
+
+  <!-- Hero Section -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <img src="/static/my_image.jpg" class="rounded-circle shadow mb-3" width="150" height="150" alt="Profile Photo">
+      <h1 class="fw-bold">About Me</h1>
+      <p class="lead">I’m <span class="text-primary">Jaychandra Das</span>, a passionate Python Full Stack Developer 🚀</p>
+    </div>
+  </section>
+
+  <!-- My Journey -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mb-4">My Journey</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>🎓 Education:</strong> Bachelor’s in Computer Science (GIFT AUTONOMOUS)</li>
+          <li class="list-group-item"><strong>💻 Technical Knowledge:</strong> HTML,CSS,C,java,python & Web Development basics</li>
+          <li class="list-group-item"><strong>🚀 Projects:</strong> Online Voting System, Survey App(Powered by Omnidata AI), Amazon Clone,Coronary heart disease prediction by using ML</li>
+          <li class="list-group-item"><strong>🏆 Certifications:</strong> python, AI&ML,Generative AI,NPTEL courses(Introduction To Industry 4.0 And Industrial Internet Of Things,Cloud computing,Software Testing)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h2>Skills</h2>
+      <div class="row mt-4">
+        <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="bi bi-code-slash fs-2 text-primary"></i><h5>Python</h5></div></div>
+        <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="bi bi-server fs-2 text-success"></i><h5>Django</h5></div></div>
+        <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="bi bi-braces fs-2 text-warning"></i><h5>JavaScript</h5></div></div>
+        <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="bi bi-database fs-2 text-danger"></i><h5>SQL</h5></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="container my-5">
+    <h2 class="mb-4">Achievements</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+          <h5>🏅 Online Voting System</h5>
+          <p>Developed a secure voting system using Django.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+          <h5>🫀Coronary heart Disease Prediction</h5>
+          <p>Future heart disease risk analysis</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+          <h5>📊 Survey App</h5>
+          <p>Created a feedback system with real-time results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h2>Hobbies & Interests</h2>
+      <p>I enjoy coding challenges, exploring new technologies, reading books, and watching movie🎥</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="text-center py-5">
+    <h2>Let’s Connect!</h2>
+    <p>If you’d like to collaborate or discuss opportunities, feel free to reach out.</p>
+    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg"><i class="bi bi-envelope-fill me-2"></i>Contact Me</a>
+  </section>
+
+  {% include "fotter.html" %}
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

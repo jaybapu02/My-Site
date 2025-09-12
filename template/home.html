@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MySite</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    {% include "nav_bar.html" %}
+
+    <!-- Hero Section -->
+    <section class="bg-light text-dark text-center p-5">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Hi, I’m <span class="text-primary">Jaychandra</span></h1>
+        <p class="lead">A passionate Python Full Stack Developer 🚀</p>
+        <p class="lead">Web Developer | Python Enthusiast | Problem Solver</p>
+        <a href="{% url 'projects' %}" class="btn btn-primary btn-lg mt-3">View My Work</a>
+        <a href="{% static 'My_Resume.pdf' %}"  class="btn btn-primary btn-lg mt-3">View Resume</a>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="/static/my_image.jpg" class="img-fluid rounded shadow" alt="About Me" style="height: 400px;width:400px">
+        </div>
+        <div class="col-md-6">
+          <h2>About Me</h2>
+          <p>
+            I am a full stack developer with expertise in Python (Django, Flask), 
+            HTML,CSS,Bootstrap, and modern web technologies. I love building interactive 
+            and scalable applications that solve real-world problems.
+          </p>
+          <a href="{% url 'about' %}" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Preview -->
+    <section class="bg-light py-5">
+      <div class="container text-center">
+        <h2>Skills</h2>
+        <div class="row mt-4">
+          <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Python</h5></div></div>
+          <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Django</h5></div></div>
+          <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>HTML & CSS</h5></div></div>
+          <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>SQL</h5></div></div>
+        </div>
+        <a href="{% url 'skills' %}" class="btn btn-outline-dark mt-3">View All Skills</a>
+      </div>
+    </section>
+
+    <!-- Social Links Section (instead of Projects) -->
+    <section class="container my-5 text-center">
+      <h2 class="mb-4">Find Me Online</h2>
+      <p class="text-muted">Let’s connect and collaborate 🚀</p>
+      <div class="d-flex justify-content-center gap-4">
+        <a href="https://github.com/jaybapu02" target="_blank" class="text-dark fs-3 me-3">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jaychandra-das-739a00243" target="_blank" class="text-primary fs-3 me-3">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jaychandra-das-739a00243" target="_blank" class="text-info fs-3 me-3">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/_jaychandra._/" target="_blank" class="text-danger fs-3 me-3">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="mailto:jaychandradasbapu05@gmail.com?subject=Work Inquiry&body=Hello Jaychandra," 
+            class="text-danger fs-3">
+            <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Preview -->
+    <section class="bg-dark text-light text-center p-5">
+      <div class="container">
+        <h2>Let’s Work Together</h2>
+        <p>Have a project in mind? Feel free to reach out.</p>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Contact Me</a>
+      </div>
+    </section>
+
+</body>
+</html>
