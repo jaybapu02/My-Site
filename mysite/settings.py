@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-vfz$bnrq_w989of=q!b)b*6io!6fto^llty#t4^x%sj1pg@3@7"
 # SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['jay-site.onrender.com', 'localhost', '127.0.0.1']
 
