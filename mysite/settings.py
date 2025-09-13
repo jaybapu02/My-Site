@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,8 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-vfz$bnrq_w989of=q!b)b*6io!6fto^llty#t4^x%sj1pg@3@7"
 # SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+# DEBUG = False
+SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")  # load from env
+DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = ['jay-site.onrender.com', 'localhost', '127.0.0.1']
 
 
