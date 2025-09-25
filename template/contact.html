@@ -3,44 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Me</title>
+    <!-- Bootstrap CSS (add your link if not already included) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    {% include "nav_bar.html"%}
-    <div class="text-center-fluid">
-    <img src="/static/contact.avif" class="img-fluid d-block mx-auto my-4" alt="Contact Jaychandra" style="max-height:400px; width:100%; object-fit:cover;">
-</div>
-<div class="container text-center">
-    <h2 class="text-center">Contact Me</h2>
-    <!-- Messages -->
-{% if messages %}
-  {% for message in messages %}
-    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} text-center">
-      {{ message }}
+    {% include "nav_bar.html" %}
+
+    <!-- Header Image -->
+    <div class="container text-center my-4">
+        <img src="/static/contact.avif" class="img-fluid d-block mx-auto" 
+             alt="Contact Jaychandra" style="max-height:400px; width:100%; object-fit:cover;">
     </div>
-  {% endfor %}
-{% endif %}
-    <form method="post" action="/contact/">
-      {% csrf_token %}
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your name">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
-  </div>
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
-  </div>
-  <div class="form-group">
-    <label for="desc">Tell me:: For what you want to contact me for</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
-  </div>
-  <button class="btn btn-primary" type="submit">Submit</button>
-</form>
-</div>
-{% include "fotter.html"%}
+
+    <!-- Contact Form -->
+    <div class="container text-center">
+        <h2 class="mb-4">Contact Me</h2>
+
+        <!-- Display messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} text-center">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" action="/contact/">
+            {% csrf_token %}
+            <div class="form-group text-left">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your name">
+            </div>
+
+            <div class="form-group text-left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
+            </div>
+
+            <div class="form-group text-left">
+                <label for="phone">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group text-left">
+                <label for="desc">Tell me: What you want to contact me for</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="Enter your message"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+
+    {% include "fotter.html" %}
+
+    <!-- Optional Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
