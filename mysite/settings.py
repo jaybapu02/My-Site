@@ -28,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")  # load from env
-DEBUG = config("DEBUG", default=False, cast=bool)
+# DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = ['jay-site.onrender.com', 'localhost', '127.0.0.1']
 
 
@@ -132,3 +133,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # APPEND_SLASH = False
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'jaychandradasbapu05@gmail.com'
+EMAIL_HOST_PASSWORD = "zeqm dhsf lcno xqxs"
+
