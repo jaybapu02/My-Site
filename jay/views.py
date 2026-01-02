@@ -33,14 +33,16 @@ def contact(request):
         {desc}
         """
 
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            ['jaychandradasbapu05@gmail.com'],
-            fail_silently=False,
-        )
-
+        try:
+            send_mail(
+                "New Contact Form Submission",
+                f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage:\n{desc}",
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER],
+                fail_silently=True,   # VERY IMPORTANT
+            )
+        except Exception as e:
+            print("Email failed:", e)
         messages.success(request, "Your message has been sent successfully!")
         return redirect('/contact/')
 
