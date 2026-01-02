@@ -28,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")  # load from env
-# DEBUG = config("DEBUG", default=False, cast=bool)
-DEBUG = True
+DEBUG = config("DEBUG", default=False, cast=bool)
+# DEBUG = True
 ALLOWED_HOSTS = ['jay-site.onrender.com', 'localhost', '127.0.0.1']
 
 
