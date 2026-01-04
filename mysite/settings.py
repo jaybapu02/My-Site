@@ -28,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")  # load from env
-DEBUG = config("DEBUG", default=False, cast=bool)
-# DEBUG = True
+# DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = ['jay-site.onrender.com', 'localhost', '127.0.0.1']
 
 
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "jay",
-    "django_sendgrid_v5",
 ]
 
 MIDDLEWARE = [
@@ -137,13 +136,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # import os
 
-import os
+from decouple import config
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
-
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+SENDGRID_API_KEY = config("SENDGRID_API_KEY", default="")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="")
 
 
 
